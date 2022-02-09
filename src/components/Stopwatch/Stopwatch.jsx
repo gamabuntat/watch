@@ -11,13 +11,13 @@ const Stopwatch = () => {
 
   useEffect(() => {
     if (isStart) {
-      timer.current = setTimeout(() => setSec(sec + 1), 1000);
+      timer.current = setInterval(() => setSec((sec) => sec + 1), 1000);
     }
 
     return () => {
       clearTimeout(timer.current);
     };
-  });
+  }, [isStart]);
 
   return (
     <S.Main>
