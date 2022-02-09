@@ -1,21 +1,28 @@
-import styled from 'styled-components';
+import { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
 
 import Stopwatch from 'components/Stopwatch/Stopwatch';
+import ThemeSwitcher from 'components/ThemeSwitcher/ThemeSwitcher';
+import commonTheme from 'constants/commonTheme';
+import lightTheme from 'constants/lightTheme';
+import darkTheme from 'constants/darkTheme';
 
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: black;
-`;
+import StyledApp from './App.style';
 
 const App = () => {
+  const themes = [lightTheme, darkTheme];
+  const [isDark, toggleDarkMode] = useState(false);
+
   return (
-    <Main>
-      <Stopwatch />
-    </Main>
+    <ThemeProvider theme={{ ...commonTheme, ...themes[Number(isDark)] }}>
+      <StyledApp>
+        <ThemeSwitcher
+          checked={isDark}
+          onChange={() => toggleDarkMode(!isDark)}
+        />
+        <Stopwatch />
+      </StyledApp>
+    </ThemeProvider>
   );
 };
 

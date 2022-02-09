@@ -9,7 +9,7 @@ const Stopwatch = {
   ClockFace: styled.span`
     font-family: GohuFont, monospace;
     font-size: min(20vw, 100px);
-    color: white;
+    color: ${(props) => props.theme.fg};
   `,
   Controls: styled.div`
     width: 100%;
@@ -33,6 +33,6 @@ const Stopwatch = {
       color: #ffcc00;
     }
   `,
-}
+};
 
 export default Stopwatch;
