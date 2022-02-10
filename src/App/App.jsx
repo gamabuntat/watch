@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import Stopwatch from 'components/Stopwatch/Stopwatch';
-import ThemeSwitcher from 'components/ThemeSwitcher/ThemeSwitcher';
+import Stopwatch from 'components/Stopwatch/index';
+import ThemeSwitcher from 'components/ThemeSwitcher/index';
 import commonTheme from 'constants/commonTheme';
 import lightTheme from 'constants/lightTheme';
 import darkTheme from 'constants/darkTheme';
