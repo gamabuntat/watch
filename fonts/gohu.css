@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'GohuFont';
-    src: local('GohuFont'),
-        url('GohuFont.woff2') format('woff2'),
-        url('GohuFont.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
