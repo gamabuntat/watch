@@ -47,6 +47,12 @@ const Thumb = styled.span`
   ${Checkbox}:checked + ${Track} > & {
     left: calc(100% - ${thumbSize}px - ${trackPadding}px);
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    & {
+      transition: none;
+    }
+  }
 `;
 
 const Icon = styled.span`

@@ -7,9 +7,7 @@ const Stopwatch = {
     align-items: center;
   `,
   ClockFace: styled.span`
-    font-family: GohuFont, monospace;
     font-size: min(20vw, 100px);
-    color: ${({ theme }) => theme.fg};
   `,
   Controls: styled.div`
     width: 100%;
@@ -21,11 +19,11 @@ const Stopwatch = {
   `,
   Control: styled.button.attrs({ type: 'button' })`
     padding: 10px;
-    font-family: monospace;
+    font-family: inherit;
     font-size: clamp(20px, 5vw, 30px);
     border-width: clamp(5px, 0.8vw, 10px);
     background-color: transparent;
-    color: ${({ theme }) => theme.fg};
+    color: inherit;
     cursor: pointer;
     border-top-color: ${({ theme }) => theme.btnBorderLight};
     border-left-color: ${({ theme }) => theme.btnBorderLight};

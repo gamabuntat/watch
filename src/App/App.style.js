@@ -5,8 +5,8 @@ const App = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: ${({ theme }) => theme.bg};
+  padding: 1em 0;
+  min-height: 100vh;
 `;
 
 export default App;
