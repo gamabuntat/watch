@@ -23,21 +23,13 @@ const Stopwatch = () => {
     <S.Main>
       <S.ClockFace>{formatSecInTime(sec)}</S.ClockFace>
       <S.Controls>
-        <S.Control
-          type="button"
-          aria-label="start"
-          onClick={() => toggleStart(true)}
-        >
+        <S.Control aria-label="start" onClick={() => toggleStart(true)}>
           start
         </S.Control>
-        <S.Control type="button" aria-label="reset" onClick={() => setSec(0)}>
+        <S.Control aria-label="reset" onClick={() => setSec(0)}>
           reset
         </S.Control>
-        <S.Control
-          type="button"
-          aria-label="stop"
-          onClick={() => toggleStart(false)}
-        >
+        <S.Control aria-label="stop" onClick={() => toggleStart(false)}>
           stop
         </S.Control>
       </S.Controls>
