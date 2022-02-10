@@ -18,10 +18,10 @@ const Stopwatch = {
     );
   `,
   Control: styled.button.attrs({ type: 'button' })`
-    padding: 10px;
+    padding: .3em 0;
     font-family: inherit;
-    font-size: clamp(20px, 5vw, 30px);
-    border-width: clamp(5px, 0.8vw, 10px);
+    font-size: clamp(12px, 5vw, 30px);
+    border-width: clamp(5px, 1.8vw, 10px);
     background-color: transparent;
     color: inherit;
     cursor: pointer;

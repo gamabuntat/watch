@@ -7,15 +7,17 @@ const Checkbox = styled.input.attrs({ type: 'checkbox' })`
   appearance: none;
 `;
 
-const trackWidth = 56;
-const trackHeight = 31;
-const trackPadding = 5;
-const thumbSize = trackHeight - trackPadding * 2;
+const trackWidth = 68;
+const trackHeight = 38;
+const trackPadding = 8;
+const iconFontSize = 21;
+const thumbSize = 26;
 
 const Track = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: ${trackWidth}px;
   height: ${trackHeight}px;
   padding: ${trackPadding}px;
@@ -31,8 +33,8 @@ const Track = styled.div`
 
 const Thumb = styled.span`
   position: absolute;
-  top: ${trackPadding}px;
-  left: ${trackPadding}px;
+  top: calc(50% - ${thumbSize}px / 2);
+  left: calc(${trackPadding}px - 1%);
   width: ${thumbSize}px;
   height: ${thumbSize}px;
   background-color: ${({ theme }) => theme.btnBg};
@@ -45,7 +47,7 @@ const Thumb = styled.span`
   }
 
   ${Checkbox}:checked + ${Track} > & {
-    left: calc(100% - ${thumbSize}px - ${trackPadding}px);
+    left: calc(100% - ${thumbSize}px - ${trackPadding}px + 1%);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -56,9 +58,7 @@ const Thumb = styled.span`
 `;
 
 const Icon = styled.span`
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  font-size: ${iconFontSize}px;
   user-select: none;
 `;
 
