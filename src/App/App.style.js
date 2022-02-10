@@ -6,7 +6,7 @@ const App = styled.main`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: ${(props) => props.theme.bg};
+  background-color: ${({ theme }) => theme.bg};
 `;
 
 export default App;

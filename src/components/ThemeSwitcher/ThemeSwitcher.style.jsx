@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-const Input = styled.input.attrs({ type: 'checkBox' })`
+const Checkbox = styled.input.attrs({ type: 'checkbox' })`
   position: absolute;
   margin: 0;
+  outline: none;
   appearance: none;
 `;
 
@@ -23,8 +24,8 @@ const Track = styled.div`
   cursor: pointer;
   box-shadow: 0 0 4px 0 ${({ theme }) => theme.fg} inset;
 
-  ${Input}:checked + & {
-    box-shadow: 0 0 4px 0 ${({ theme }) => theme.fg};
+  ${Checkbox}:checked + & {
+    box-shadow: 0 0 20px 0 ${({ theme }) => theme.fg};
   }
 `;
 
@@ -39,11 +40,11 @@ const Thumb = styled.span`
   border-radius: 50%;
   border: 1px solid rgba(27, 31, 36, 0.15);
 
-  ${Input}:focus-visible + ${Track} > & {
+  ${Checkbox}:focus-visible + ${Track} > & {
     box-shadow: ${({ theme }) => theme.btnFocusShadow};
   }
 
-  ${Input}:checked + ${Track} > & {
+  ${Checkbox}:checked + ${Track} > & {
     left: calc(100% - ${thumbSize}px - ${trackPadding}px);
   }
 `;
@@ -52,11 +53,12 @@ const Icon = styled.span`
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
 `;
 
 const ThemeSwitcher = {
   Track,
-  Input,
+  Checkbox,
   Thumb,
   Icon,
 };

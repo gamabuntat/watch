@@ -2,16 +2,16 @@ import S from './ThemeSwitcher.style';
 
 const ThemeSwitcher = (props) => {
   return (
-    <label
-      role="checkbox"
-      aria-checked={props.checked}
-      aria-label="theme switcher"
-    >
-      <S.Input {...props} />
+    <label>
+      <S.Checkbox {...props} />
       <S.Track>
         <S.Thumb />
-        <S.Icon>🌞</S.Icon>
-        <S.Icon>🌚</S.Icon>
+        <S.Icon role="img" aria-label="light theme">
+          🌞
+        </S.Icon>
+        <S.Icon role="img" aria-label="dark theme">
+          🌚
+        </S.Icon>
       </S.Track>
     </label>
   );
