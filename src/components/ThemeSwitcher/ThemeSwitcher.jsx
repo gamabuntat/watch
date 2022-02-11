@@ -1,8 +1,8 @@
-import S from './ThemeSwitcher.style';
+import * as S from './ThemeSwitcher.styled';
 
 const ThemeSwitcher = (props) => {
   return (
-    <label>
+    <S.ThemeSwitcher>
       <S.Checkbox {...props} />
       <S.Track>
         <S.Thumb />
@@ -13,7 +13,7 @@ const ThemeSwitcher = (props) => {
           🌚
         </S.Icon>
       </S.Track>
-    </label>
+    </S.ThemeSwitcher>
   );
 };
 

@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-const Checkbox = styled.input.attrs({ type: 'checkbox' })`
+export const ThemeSwitcher = styled.label`
+  align-self: flex-start;
+`;
+
+export const Checkbox = styled.input.attrs({ type: 'checkbox' })`
   position: absolute;
   margin: 0;
   outline: none;
@@ -13,7 +17,7 @@ const trackPadding = 8;
 const iconFontSize = 21;
 const thumbSize = 26;
 
-const Track = styled.div`
+export const Track = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -31,7 +35,7 @@ const Track = styled.div`
   }
 `;
 
-const Thumb = styled.span`
+export const Thumb = styled.span`
   position: absolute;
   top: calc(50% - ${thumbSize}px / 2);
   left: calc(${trackPadding}px - 1%);
@@ -57,16 +61,7 @@ const Thumb = styled.span`
   }
 `;
 
-const Icon = styled.span`
+export const Icon = styled.span`
   font-size: ${iconFontSize}px;
   user-select: none;
 `;
-
-const ThemeSwitcher = {
-  Track,
-  Checkbox,
-  Thumb,
-  Icon,
-};
-
-export default ThemeSwitcher;

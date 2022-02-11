@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import GlobalStyle from 'components/GlobalStyle/index';
+import Clock from 'components/Clock/index';
 import Stopwatch from 'components/Stopwatch/index';
 import ThemeSwitcher from 'components/ThemeSwitcher/index';
 import commonTheme from 'constants/commonTheme';
 import lightTheme from 'constants/lightTheme';
 import darkTheme from 'constants/darkTheme';
 
-import StyledApp from './App.style';
+import * as S from './App.styled';
 
 const App = () => {
   const themes = [lightTheme, darkTheme].map((thm) => ({
@@ -19,16 +20,19 @@ const App = () => {
 
   return (
     <ThemeProvider theme={themes[Number(isDark)]}>
-      <>
+      <S.App>
         <GlobalStyle />
-        <StyledApp>
+        <S.Header>
           <ThemeSwitcher
             checked={isDark}
             onChange={() => toggleDarkMode(!isDark)}
           />
+        </S.Header>
+        <S.Main>
           <Stopwatch />
-        </StyledApp>
-      </>
+          <Clock />
+        </S.Main>
+      </S.App>
     </ThemeProvider>
   );
 };

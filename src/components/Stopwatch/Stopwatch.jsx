@@ -1,17 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
 
-import formatSecInTime from 'utils/formatSecInTime';
+import formatMsInTime from 'utils/formatMsInTime';
+import ClockFace from 'components/ClockFace/index';
 
-import S from './Stopwatch.style';
+import * as S from './Stopwatch.styled';
 
 const Stopwatch = () => {
   const [isStart, toggleStart] = useState(false);
-  const [sec, setSec] = useState(0);
+  const [ms, setMs] = useState(0);
   const timer = useRef(0);
 
   useEffect(() => {
     if (isStart) {
-      timer.current = setInterval(() => setSec((sec) => sec + 1), 1000);
+      timer.current = setInterval(() => setMs((ms) => ms + 100), 100);
     }
 
     return () => {
@@ -20,20 +21,20 @@ const Stopwatch = () => {
   }, [isStart]);
 
   return (
-    <S.Main>
-      <S.ClockFace>{formatSecInTime(sec)}</S.ClockFace>
+    <S.Stopwatch>
+      <ClockFace>{formatMsInTime(ms)}</ClockFace>
       <S.Controls>
         <S.Control aria-label="start" onClick={() => toggleStart(true)}>
           start
         </S.Control>
-        <S.Control aria-label="reset" onClick={() => setSec(0)}>
+        <S.Control aria-label="reset" onClick={() => setMs(0)}>
           reset
         </S.Control>
         <S.Control aria-label="stop" onClick={() => toggleStart(false)}>
           stop
         </S.Control>
       </S.Controls>
-    </S.Main>
+    </S.Stopwatch>
   );
 };
 
