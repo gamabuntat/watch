@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import GlobalStyle from 'components/GlobalStyle/index';
-import Clock from 'components/Clock/index';
 import Stopwatch from 'components/Stopwatch/index';
 import ThemeSwitcher from 'components/ThemeSwitcher/index';
 import commonTheme from 'constants/commonTheme';
@@ -30,7 +29,6 @@ const App = () => {
         </S.Header>
         <S.Main>
           <Stopwatch />
-          <Clock />
         </S.Main>
       </S.App>
     </ThemeProvider>

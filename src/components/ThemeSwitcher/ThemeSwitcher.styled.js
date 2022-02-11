@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-export const ThemeSwitcher = styled.label`
-  align-self: flex-start;
-`;
+export const ThemeSwitcher = styled.label``;
 
 export const Checkbox = styled.input.attrs({ type: 'checkbox' })`
   position: absolute;
