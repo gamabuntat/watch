@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const App = styled.div`
   display: flex;
   flex-direction: column;
-  grid-gap: 16vh;
+  grid-gap: 1rem;
   margin: 0 auto;
   padding: 1rem 0;
   width: max-content;
@@ -14,6 +14,7 @@ export const App = styled.div`
 export const Header = styled.header`
   display: flex;
   justify-content: flex-end;
+  flex-basis: 20vh;
 `;
 
 export const Main = styled.main`
@@ -21,5 +22,7 @@ export const Main = styled.main`
   flex: 1;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 1rem;
+`;
+
+export const Footer = styled.footer`
 `;

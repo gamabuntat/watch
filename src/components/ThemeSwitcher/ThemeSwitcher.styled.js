@@ -1,6 +1,30 @@
 import styled from 'styled-components';
 
-export const ThemeSwitcher = styled.label``;
+const width = 68;
+const height = 38;
+const padding = 8;
+const iconFontSize = 21;
+const thumbSize = 26;
+
+export const ThemeSwitcher = styled.label`
+  align-self: flex-end;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: clamp(
+    ${width}px,
+    calc((${width}px - min(100% - ${width}px / 2, ${width}px)) * 999),
+    100%
+  );
+  height: ${height}px;
+  padding: ${padding}px;
+  background-color: white;
+  border-radius: ${height}px;
+  cursor: pointer;
+  box-shadow: ${({ theme }) =>
+    theme.isDark ? `0 0 20px 0 ${theme.fg}` : `0 0 4px 0 ${theme.fg} inset`};
+`;
 
 export const Checkbox = styled.input.attrs({ type: 'checkbox' })`
   position: absolute;
@@ -9,34 +33,10 @@ export const Checkbox = styled.input.attrs({ type: 'checkbox' })`
   appearance: none;
 `;
 
-const trackWidth = 68;
-const trackHeight = 38;
-const trackPadding = 8;
-const iconFontSize = 21;
-const thumbSize = 26;
-
-export const Track = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: ${trackWidth}px;
-  height: ${trackHeight}px;
-  padding: ${trackPadding}px;
-  background-color: white;
-  border-radius: ${trackHeight}px;
-  cursor: pointer;
-  box-shadow: 0 0 4px 0 ${({ theme }) => theme.fg} inset;
-
-  ${Checkbox}:checked + & {
-    box-shadow: 0 0 20px 0 ${({ theme }) => theme.fg};
-  }
-`;
-
 export const Thumb = styled.span`
   position: absolute;
   top: calc(50% - ${thumbSize}px / 2);
-  left: calc(${trackPadding}px - 1%);
+  left: calc(${padding}px - 1%);
   width: ${thumbSize}px;
   height: ${thumbSize}px;
   background-color: ${({ theme }) => theme.btnBg};
@@ -44,12 +44,12 @@ export const Thumb = styled.span`
   border-radius: 50%;
   border: 1px solid rgba(27, 31, 36, 0.15);
 
-  ${Checkbox}:focus-visible + ${Track} > & {
-    box-shadow: ${({ theme }) => theme.btnFocusShadow};
+  ${Checkbox}:focus-visible + && {
+      box-shadow: ${({ theme }) => theme.btnFocusShadow};
   }
 
-  ${Checkbox}:checked + ${Track} > & {
-    left: calc(100% - ${thumbSize}px - ${trackPadding}px + 1%);
+  ${Checkbox}:checked + & {
+    left: calc(100% - ${thumbSize}px - ${padding}px + 1%);
   }
 
   @media (prefers-reduced-motion: reduce) {
