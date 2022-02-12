@@ -15,7 +15,7 @@ const Clock = () => {
     };
   }, []);
 
-  return <ClockFace>{time}</ClockFace>
+  return <ClockFace>{time}</ClockFace>;
 };
 
 export default Clock;

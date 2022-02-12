@@ -24,5 +24,4 @@ export const Main = styled.main`
   align-items: center;
 `;
 
-export const Footer = styled.footer`
-`;
+export const Footer = styled.footer``;

@@ -45,7 +45,7 @@ export const Thumb = styled.span`
   border: 1px solid rgba(27, 31, 36, 0.15);
 
   ${Checkbox}:focus-visible + && {
-      box-shadow: ${({ theme }) => theme.btnFocusShadow};
+    box-shadow: ${({ theme }) => theme.btnFocusShadow};
   }
 
   ${Checkbox}:checked + & {
