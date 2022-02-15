@@ -6,6 +6,7 @@ export const Stopwatch = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: min-content;
 `;
 
 export const Controls = styled.div`

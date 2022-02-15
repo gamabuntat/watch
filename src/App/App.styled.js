@@ -7,8 +7,6 @@ export const App = styled.div`
   flex-direction: column;
   grid-gap: 1rem;
   margin: 0 auto;
-  padding: 1rem 0 0;
-  width: max-content;
   min-height: 100vh;
 `;
 
@@ -16,13 +14,13 @@ export const Header = styled.header`
   display: flex;
   justify-content: flex-end;
   flex-basis: 20vh;
+  padding: 1rem 8vw;
 `;
 
 export const Main = styled.main`
   display: flex;
   flex: 1;
   flex-direction: column;
-  align-items: center;
 `;
 
 export const Footer = styled.footer`
@@ -32,14 +30,15 @@ export const Footer = styled.footer`
   min-height: 20vh;
 `;
 
-const navButtonSize = 'clamp(40px, 100%, 80px)';
+const navButtonSize = 'clamp(40px, 50%, 80px)';
 
 export const Nav = styled.nav`
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, ${navButtonSize});
-  width: 100%;
+  width: 80%;
   height: min-content;
+  padding: 0 1rem;
 `;
 
 export const NavButton = styled(Button)`
