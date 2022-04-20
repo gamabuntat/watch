@@ -5,7 +5,8 @@ import * as S from './Slider.styled';
 const Slider = ({ children, activeItem, setActiveItem }) => {
   const [isMoving, toggleMoving] = useState(false);
   const [isHidden, toggleHidden] = useState(true);
-  const [isSmooth, toggleSmooth] = useState(true);
+  // const [isSmooth, toggleSmooth] = useState(true);
+  const isSmooth = useRef(true);
   const [position, setPosition] = useState(0);
   const offset = useRef(0);
   const slider = useRef(null);
@@ -18,7 +19,8 @@ const Slider = ({ children, activeItem, setActiveItem }) => {
     offset.current = e.clientX;
     toggleMoving(true);
     toggleHidden(false);
-    toggleSmooth(false);
+    // toggleSmooth(false);
+    isSmooth.current = false;
   };
 
   const onPointerMove = (e) => {
@@ -38,7 +40,8 @@ const Slider = ({ children, activeItem, setActiveItem }) => {
   };
 
   const onLostPointerCapture = () => {
-    toggleSmooth(true);
+    isSmooth.current = true;
+    // toggleSmooth(true);
     toggleMoving(false);
     setActiveItem(Math.round(position));
   };
@@ -69,7 +72,9 @@ const Slider = ({ children, activeItem, setActiveItem }) => {
       <S.Container
         style={{
           left: `-${(isMoving ? position : activeItem) * 100}%`,
-          transition: `${isSmooth ? `all ${transitionMs / 1000}s` : 'unset'}`,
+          transition: `${
+            isSmooth.current ? `all ${transitionMs / 1000}s` : 'unset'
+          }`,
         }}
       >
         {children.map((child, idx) => (

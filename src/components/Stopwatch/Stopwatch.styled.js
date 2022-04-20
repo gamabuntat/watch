@@ -19,7 +19,7 @@ export const Controls = styled.div`
 `;
 
 export const Control = styled(Button)`
-  padding: .3rem 0;
+  padding: 0.3rem 0;
   font-size: clamp(12px, 5vw, 30px);
   border-width: clamp(5px, 1.8vw, 10px);
 `;

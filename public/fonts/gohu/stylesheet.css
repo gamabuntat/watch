@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'GohuFont';
-  src: local('GohuFont'),
-    url('gohu.woff2') format('woff2'),
+  src: local('GohuFont'), url('gohu.woff2') format('woff2'),
     url('gohu.woff') format('woff');
   font-weight: 500;
   font-style: normal;

@@ -24,7 +24,11 @@ const Stopwatch = () => {
     <S.Stopwatch>
       <ClockFace>{formatMsInTime(ms)}</ClockFace>
       <S.Controls>
-        <S.Control aria-label="start" onClick={() => toggleStart(true)} tabIndex={'initial'}>
+        <S.Control
+          aria-label="start"
+          onClick={() => toggleStart(true)}
+          tabIndex={'initial'}
+        >
           start
         </S.Control>
         <S.Control aria-label="reset" onClick={() => setMs(0)}>
